@@ -1,348 +1,497 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Thirsty's Tavern - Best Bar & Grill in Binghamton, NY</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Thirsty's Tavern is Binghamton's premier sports bar and grill. Enjoy great food, drinks, and entertainment in a friendly atmosphere. Visit us today!">
-	<meta name="keywords" content="Thirsty's Tavern, Binghamton bar, sports bar, pub food, live entertainment, pool tables, jukebox">
-	<meta name="author" content="Thirsty's Tavern">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Thirsty's Tavern - Best Bar & Grill in Binghamton, NY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Thirsty's Tavern is Binghamton's premier sports bar and grill. Enjoy great food, drinks, and entertainment in a friendly atmosphere. Visit us today!">
+    <meta name="keywords" content="Thirsty's Tavern, Binghamton bar, sports bar, pub food, live entertainment, pool tables, jukebox">
+    <meta name="author" content="Thirsty's Tavern">
 
-	<!-- Favicon -->
-	<link rel="icon" type="image/jpeg" href="images/thirstys_logo.jpg">
-
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://www.thirstystavern.com/">
-	<meta property="og:title" content="Thirsty's Tavern - Best Bar & Grill in Binghamton, NY">
-	<meta property="og:description" content="Enjoy great food, drinks, and entertainment at Thirsty's Tavern, Binghamton's premier sports bar and grill.">
-	<meta property="og:image" content="https://www.thirstystavern.com/images/thirstys_logo.jpg">
-
-	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:url" content="https://www.thirstystavern.com/">
-	<meta property="twitter:title" content="Thirsty's Tavern - Best Bar & Grill in Binghamton, NY">
-	<meta property="twitter:description" content="Enjoy great food, drinks, and entertainment at Thirsty's Tavern, Binghamton's premier sports bar and grill.">
-	<meta property="twitter:image" content="https://www.thirstystavern.com/images/thirstys_logo.jpg">
-
-    <!-- Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-    <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="images/thirstys_logo.jpg">
 
-    <!-- Add Swiper CSS -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.thirstystavern.com/">
+    <meta property="og:title" content="Thirsty's Tavern - Best Bar & Grill in Binghamton, NY">
+    <meta property="og:description" content="Enjoy great food, drinks, and entertainment at Thirsty's Tavern, Binghamton's premier sports bar and grill.">
+    <meta property="og:image" content="https://www.thirstystavern.com/images/thirstys_logo.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.thirstystavern.com/">
+    <meta property="twitter:title" content="Thirsty's Tavern - Best Bar & Grill in Binghamton, NY">
+    <meta property="twitter:description" content="Enjoy great food, drinks, and entertainment at Thirsty's Tavern, Binghamton's premier sports bar and grill.">
+    <meta property="twitter:image" content="https://www.thirstystavern.com/images/thirstys_logo.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tavern: {
+                            50: '#fdf8ef',
+                            100: '#faefd5',
+                            200: '#f4dcaa',
+                            300: '#edc474',
+                            400: '#e5a43c',
+                            500: '#de8d1f',
+                            600: '#c77017',
+                            700: '#a55316',
+                            800: '#864219',
+                            900: '#6e3718',
+                            950: '#3b1b09',
+                        },
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Add these lines for Fancybox -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
-	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <style>
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.15s; }
+        .reveal-delay-2 { transition-delay: 0.3s; }
+        .reveal-delay-3 { transition-delay: 0.45s; }
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+        .hero-gradient { background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.6) 100%); }
 
+        .nav-scrolled { background: rgba(15, 15, 15, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+
+        .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); }
+
+        .menu-card:hover img { transform: scale(1.08); }
+        .menu-card img { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+
+        .swiper-button-next, .swiper-button-prev { color: #e5a43c !important; }
+        .swiper-pagination-bullet-active { background: #e5a43c !important; }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #e5a43c !important;
+            box-shadow: 0 0 0 3px rgba(229, 164, 60, 0.15) !important;
+        }
+
+        ::selection { background: rgba(229, 164, 60, 0.3); }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-900" style="font-family: 'Lora', serif;">
+<body class="bg-neutral-950 text-neutral-100 font-body antialiased">
 
-    <header class="relative bg-cover bg-center bg-fixed overflow-hidden" style="background-image: url('images/thirsty_header.jpg'); height: 75vh;">
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div class="relative h-full flex flex-col items-center justify-center transform translate-y-4 motion-safe:scroll-smooth" style="transform: translateZ(0);">
-            <h1 class="text-white text-5xl md:text-7xl font-bold text-center mb-8" style="font-family: 'Montserrat', sans-serif;">Thirsty's Tavern</h1>
-            <h2 class="text-white text-3xl md:text-5xl font-medium italic text-center" style="font-family: 'Montserrat', sans-serif;">The Best Bar & Grill in Binghamton</h2>
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="images/thirstys_logo.jpg" alt="Thirsty's Tavern" class="w-10 h-10 rounded-full ring-2 ring-tavern-400/50 group-hover:ring-tavern-400 transition-all">
+                <span class="font-heading text-xl font-bold tracking-wide text-white">Thirsty's</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#about" class="text-sm font-medium text-neutral-300 hover:text-tavern-400 transition-colors">About</a>
+                <a href="#menu" class="text-sm font-medium text-neutral-300 hover:text-tavern-400 transition-colors">Menu</a>
+                <a href="#gallery" class="text-sm font-medium text-neutral-300 hover:text-tavern-400 transition-colors">Gallery</a>
+                <a href="#specials" class="text-sm font-medium text-neutral-300 hover:text-tavern-400 transition-colors">Specials</a>
+                <a href="#contact" class="px-5 py-2 bg-tavern-500 hover:bg-tavern-400 text-neutral-950 font-semibold text-sm rounded-full transition-all hover:shadow-lg hover:shadow-tavern-500/25">Contact Us</a>
+            </div>
+            <button id="mobile-toggle" class="md:hidden text-neutral-300 hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-neutral-950/95 backdrop-blur-xl border-t border-neutral-800">
+            <div class="px-6 py-4 flex flex-col gap-4">
+                <a href="#about" class="text-neutral-300 hover:text-tavern-400 transition-colors py-2">About</a>
+                <a href="#menu" class="text-neutral-300 hover:text-tavern-400 transition-colors py-2">Menu</a>
+                <a href="#gallery" class="text-neutral-300 hover:text-tavern-400 transition-colors py-2">Gallery</a>
+                <a href="#specials" class="text-neutral-300 hover:text-tavern-400 transition-colors py-2">Specials</a>
+                <a href="#contact" class="px-5 py-2 bg-tavern-500 hover:bg-tavern-400 text-neutral-950 font-semibold text-sm rounded-full text-center transition-all">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="images/thirsty_header.jpg" alt="Thirsty's Tavern" class="w-full h-full object-cover scale-105" id="hero-img">
+        </div>
+        <div class="hero-gradient absolute inset-0"></div>
+        <div class="relative text-center px-6 max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-tavern-400/30 bg-tavern-400/10 mb-8">
+                <span class="w-2 h-2 bg-tavern-400 rounded-full animate-pulse"></span>
+                <span class="text-tavern-300 text-sm font-medium tracking-wide uppercase">Binghamton's Favorite Tavern</span>
+            </div>
+            <h1 class="font-heading text-5xl sm:text-6xl md:text-8xl font-bold text-white mb-6 leading-[0.95] tracking-tight">
+                Thirsty's<br><span class="text-tavern-400">Tavern</span>
+            </h1>
+            <p class="text-neutral-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                Great food, cold drinks, and good times in the heart of Southside Binghamton.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#menu" class="px-8 py-3.5 bg-tavern-500 hover:bg-tavern-400 text-neutral-950 font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-tavern-500/25 hover:-translate-y-0.5">
+                    View Our Menu
+                </a>
+                <a href="#about" class="px-8 py-3.5 border border-neutral-500 hover:border-neutral-300 text-neutral-200 hover:text-white font-medium rounded-full transition-all hover:-translate-y-0.5">
+                    Learn More
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
         </div>
     </header>
 
-    <section id="fh5co-about" class="py-12 bg-gray-700">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-wrap">
-                <div class="w-full md:w-1/2 p-4">
-                    <img src="images/thirstys_about.jpg" alt="Thirsty's Tavern" class="rounded-lg shadow-lg">
+    <!-- About -->
+    <section id="about" class="py-24 md:py-32 bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+                <div class="reveal">
+                    <div class="relative">
+                        <img src="images/thirstys_about.jpg" alt="Inside Thirsty's Tavern" class="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]">
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-tavern-500/20 rounded-2xl -z-10"></div>
+                        <div class="absolute -top-6 -left-6 w-24 h-24 border-2 border-tavern-400/30 rounded-2xl -z-10"></div>
+                    </div>
                 </div>
-                <div class="w-full md:w-1/2 p-4">
-                    <h2 class="text-3xl font-bold mb-4 text-gray-100">About Us</h2>
-                    <p class="mb-4 text-gray-300">Welcome to Thirsty's Tavern, your go-to sports bar and grill in Southside Binghamton! We're the perfect spot to catch all the big games on our multiple screens while enjoying our full bar and delicious pub fare. Challenge your friends to a game of pool or choose your favorite tunes on our TouchTunes jukebox.</p>
-                    <p class="text-gray-300">At Thirsty's, we pride ourselves on our daily specials and friendly atmosphere. Whether you're looking for a place to unwind after work, celebrate with friends, or enjoy a casual meal, we've got you covered. Come experience the best of Binghamton's bar scene at Thirsty's Tavern!</p>
+                <div class="reveal reveal-delay-1">
+                    <span class="text-tavern-400 font-medium tracking-widest uppercase text-sm">Our Story</span>
+                    <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mt-3 mb-6 leading-tight">Welcome to<br>Thirsty's Tavern</h2>
+                    <div class="w-16 h-1 bg-tavern-500 rounded-full mb-8"></div>
+                    <p class="text-neutral-400 leading-relaxed mb-6 text-lg">
+                        Welcome to Thirsty's Tavern, your go-to sports bar and grill in Southside Binghamton! We're the perfect spot to catch all the big games on our multiple screens while enjoying our full bar and delicious pub fare.
+                    </p>
+                    <p class="text-neutral-400 leading-relaxed mb-8 text-lg">
+                        Challenge your friends to a game of pool or choose your favorite tunes on our TouchTunes jukebox. At Thirsty's, we pride ourselves on our daily specials and friendly atmosphere.
+                    </p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="text-center p-4 glass rounded-xl">
+                            <div class="text-tavern-400 font-heading text-2xl font-bold">Full</div>
+                            <div class="text-neutral-500 text-sm mt-1">Bar</div>
+                        </div>
+                        <div class="text-center p-4 glass rounded-xl">
+                            <div class="text-tavern-400 font-heading text-2xl font-bold">Live</div>
+                            <div class="text-neutral-500 text-sm mt-1">Games</div>
+                        </div>
+                        <div class="text-center p-4 glass rounded-xl">
+                            <div class="text-tavern-400 font-heading text-2xl font-bold">Pool</div>
+                            <div class="text-neutral-500 text-sm mt-1">Tables</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="menu-viewer" class="py-12 bg-gray-200">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-8 text-gray-800">Explore Our Menus</h2>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="images/thirstys_menu_1.jpg" 
-                   data-fancybox="menu" 
-                   data-caption="Thirsty's Menu - Specialties"
-                   class="relative group">
-                    <img src="images/thirstys_menu_1.jpg" alt="Menu - Specialties" class="w-32 h-32 object-cover rounded-lg">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg">
-                        <span class="text-white text-sm">Specialties</span>
+    <!-- Menu -->
+    <section id="menu" class="py-24 md:py-32 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-tavern-400 font-medium tracking-widest uppercase text-sm">Food & Drink</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mt-3 mb-4">Explore Our Menus</h2>
+                <p class="text-neutral-500 max-w-xl mx-auto">From our signature burgers to wings and daily specials, there's something for everyone at Thirsty's.</p>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-6 md:gap-8">
+                <a href="images/thirstys_menu_1.jpg" data-fancybox="menu" data-caption="Thirsty's Menu - Specialties"
+                   class="menu-card group block reveal">
+                    <div class="relative rounded-2xl overflow-hidden aspect-[3/4]">
+                        <img src="images/thirstys_menu_1.jpg" alt="Menu - Specialties" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3 class="text-white font-heading text-2xl font-bold">Specialties</h3>
+                            <p class="text-neutral-400 text-sm mt-1 group-hover:text-tavern-300 transition-colors">Tap to view full menu</p>
+                        </div>
                     </div>
                 </a>
-                <a href="images/thirstys_menu_2.jpg" 
-                   data-fancybox="menu" 
-                   data-caption="Thirsty's Menu - Burgers"
-                   class="relative group">
-                    <img src="images/thirstys_menu_2.jpg" alt="Menu - Burgers" class="w-32 h-32 object-cover rounded-lg">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg">
-                        <span class="text-white text-sm">Burgers</span>
+                <a href="images/thirstys_menu_2.jpg" data-fancybox="menu" data-caption="Thirsty's Menu - Burgers"
+                   class="menu-card group block reveal reveal-delay-1">
+                    <div class="relative rounded-2xl overflow-hidden aspect-[3/4]">
+                        <img src="images/thirstys_menu_2.jpg" alt="Menu - Burgers" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3 class="text-white font-heading text-2xl font-bold">Burgers</h3>
+                            <p class="text-neutral-400 text-sm mt-1 group-hover:text-tavern-300 transition-colors">Tap to view full menu</p>
+                        </div>
                     </div>
                 </a>
-                <a href="images/thirstys_menu_3.jpg" 
-                   data-fancybox="menu" 
-                   data-caption="Thirsty's Menu - Wings 'n Things"
-                   class="relative group">
-                    <img src="images/thirstys_menu_3.jpg" alt="Menu - Wings 'n Things" class="w-32 h-32 object-cover rounded-lg">
-                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg">
-                        <span class="text-white text-sm">Wings 'n Things</span>
+                <a href="images/thirstys_menu_3.jpg" data-fancybox="menu" data-caption="Thirsty's Menu - Wings 'n Things"
+                   class="menu-card group block reveal reveal-delay-2">
+                    <div class="relative rounded-2xl overflow-hidden aspect-[3/4]">
+                        <img src="images/thirstys_menu_3.jpg" alt="Menu - Wings 'n Things" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3 class="text-white font-heading text-2xl font-bold">Wings 'n Things</h3>
+                            <p class="text-neutral-400 text-sm mt-1 group-hover:text-tavern-300 transition-colors">Tap to view full menu</p>
+                        </div>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="happy-hours" class="bg-gray-200 mx-auto px-4 flex justify-center">
-        <div style="max-width:500px">
-            <script src="https://33insights.ngrok.io/widget.js?id=99&theme=light&nofoot=1"></script>
-            <p style="font-family:Inter,sans-serif;font-size:12px;margin:8px 0 0 10px">
-              <a href="https://happyhopper.app/restaurant/thirsty-s-tavern-binghamton-99"
-                 target="_blank"
-                 style="color:rgb(255,94,87);text-decoration:none;font-weight:600">
-                View all deals on Happy Hopper →
-              </a>
-            </p>
-          </div>
-    </section>
-    <section id="happy-hours-list" class="bg-gray-200 mx-auto px-4 flex justify-center">
-    <div style="max-width:1200px">
-        <script src="https://33insights.ngrok.io/list-widget.js?id=4&theme=light"></script>
-        <p style="font-family:Inter,sans-serif;font-size:12px;margin:8px 0 0 10px">
-          <a href="https://happyhopper.app" target="_blank" style="color:rgb(255,94,87);text-decoration:none;font-weight:600">Powered by Happy Hopper &rarr;</a>
-        </p>
-      </div>
-    </section>
-    <section id="gallery" class="py-12 bg-gray-200">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Gallery</h2>
-            <div class="relative">
-                <!-- Swiper -->
-                <div class="swiper mySwiper">
+    <!-- Gallery -->
+    <section id="gallery" class="py-24 md:py-32 bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-tavern-400 font-medium tracking-widest uppercase text-sm">Take a Look</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mt-3 mb-4">Gallery</h2>
+                <p class="text-neutral-500 max-w-xl mx-auto">A taste of the Thirsty's experience.</p>
+            </div>
+            <div class="reveal">
+                <div class="swiper mySwiper rounded-2xl overflow-hidden">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="relative group">
-                                <img src="images/thirstys-pool-table.jpg" alt="Pool Table" class="w-full h-64 object-cover rounded-lg">
-                                <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <span class="text-white text-xl font-semibold">Pool Table</span>
+                            <div class="relative group overflow-hidden rounded-2xl">
+                                <img src="images/thirstys-pool-table.jpg" alt="Pool Table" class="w-full h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                                    <span class="text-white text-xl font-heading font-bold">Pool Table</span>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="relative group">
-                                <img src="images/sandwich.png" alt="Crispy Chicken Sandwich" class="w-full h-64 object-cover rounded-lg">
-                                <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <span class="text-white text-xl font-semibold">Crispy Chicken Sandwich</span>
+                            <div class="relative group overflow-hidden rounded-2xl">
+                                <img src="images/sandwich.png" alt="Crispy Chicken Sandwich" class="w-full h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                                    <span class="text-white text-xl font-heading font-bold">Crispy Chicken Sandwich</span>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="relative group">
-                                <img src="images/burger.png" alt="Bacon Burger" class="w-full h-64 object-cover rounded-lg">
-                                <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <span class="text-white text-xl font-semibold">Bacon Burger</span>
+                            <div class="relative group overflow-hidden rounded-2xl">
+                                <img src="images/burger.png" alt="Bacon Burger" class="w-full h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                                    <span class="text-white text-xl font-heading font-bold">Bacon Burger</span>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="relative group">
-                                <img src="images/french-onion-soup.png" alt="French Onion Soup" class="w-full h-64 object-cover rounded-lg">
-                                <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <span class="text-white text-xl font-semibold">French Onion Soup</span>
+                            <div class="relative group overflow-hidden rounded-2xl">
+                                <img src="images/french-onion-soup.png" alt="French Onion Soup" class="w-full h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                                    <span class="text-white text-xl font-heading font-bold">French Onion Soup</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Add Navigation -->
-                    <div class="swiper-button-next text-gray-800"></div>
-                    <div class="swiper-button-prev text-gray-800"></div>
-                    <!-- Add Pagination -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="cta-contact" class="py-12 bg-gray-600 text-gray-100">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4">Host Your Next Event with Us!</h2>
-            <p class="mb-8 text-gray-300">Looking for the perfect venue for your next party or event? Thirsty's Tavern offers a great atmosphere, delicious food, and excellent service. Contact us today to learn more about hosting your event with us!</p>
-            <form class="max-w-lg mx-auto">
-                <div class="mb-4">
-                    <input type="text" 
-                           placeholder="Your Name" 
-                           class="w-full px-4 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <!-- Specials / Happy Hours -->
+    <section id="specials" class="py-24 md:py-32 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-tavern-400 font-medium tracking-widest uppercase text-sm">Don't Miss Out</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mt-3 mb-4">Deals & Specials</h2>
+                <p class="text-neutral-500 max-w-xl mx-auto">Check out our latest happy hour deals and daily specials.</p>
+            </div>
+            <div class="flex flex-col lg:flex-row items-start justify-center gap-12 reveal">
+                <div class="glass rounded-2xl p-8 w-full max-w-md mx-auto lg:mx-0">
+                    <script src="https://33insights.ngrok.io/widget.js?id=99&theme=dark&nofoot=1"></script>
+                    <p class="mt-4 text-sm">
+                        <a href="https://33insights.ngrok.io/restaurant/thirsty-s-tavern-binghamton-99"
+                           target="_blank"
+                           class="text-tavern-400 hover:text-tavern-300 font-semibold transition-colors">
+                            View all deals on happyhopper &rarr;
+                        </a>
+                    </p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <input type="email" 
-                           placeholder="Your Email" 
-                           class="w-full px-4 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <input type="tel" 
-                           placeholder="Your Phone" 
-                           class="w-full px-4 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <div class="glass rounded-2xl p-8 w-full max-w-md mx-auto lg:mx-0">
+                    <script src="https://33insights.ngrok.io/list-widget.js?id=4&theme=dark"></script>
+                    <p class="mt-4 text-sm">
+                        <a href="https://happyhopper.app" target="_blank"
+                           class="text-tavern-400 hover:text-tavern-300 font-semibold transition-colors">
+                            Powered by happyhopper &rarr;
+                        </a>
+                    </p>
                 </div>
-                <div class="mb-4">
-                    <select class="w-full px-4 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <option value="" disabled selected>Preferred Contact Method</option>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Event CTA -->
+    <section id="contact" class="py-24 md:py-32 bg-neutral-900 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-tavern-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-tavern-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+        <div class="max-w-3xl mx-auto px-6 relative">
+            <div class="text-center mb-12 reveal">
+                <span class="text-tavern-400 font-medium tracking-widest uppercase text-sm">Get in Touch</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mt-3 mb-4">Host Your Next Event</h2>
+                <p class="text-neutral-500 max-w-xl mx-auto">Looking for the perfect venue for your next party or event? We offer a great atmosphere, delicious food, and excellent service.</p>
+            </div>
+            <form class="glass rounded-2xl p-8 md:p-10 reveal reveal-delay-1">
+                <div class="mb-6">
+                    <label class="block text-neutral-400 text-sm font-medium mb-2">Your Name</label>
+                    <input type="text" placeholder="John Doe"
+                           class="w-full px-4 py-3 bg-neutral-800/50 border border-neutral-700 rounded-xl text-neutral-100 placeholder-neutral-600 focus:outline-none transition-all">
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-neutral-400 text-sm font-medium mb-2">Email</label>
+                        <input type="email" placeholder="john@example.com"
+                               class="w-full px-4 py-3 bg-neutral-800/50 border border-neutral-700 rounded-xl text-neutral-100 placeholder-neutral-600 focus:outline-none transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-neutral-400 text-sm font-medium mb-2">Phone</label>
+                        <input type="tel" placeholder="(607) 555-0123"
+                               class="w-full px-4 py-3 bg-neutral-800/50 border border-neutral-700 rounded-xl text-neutral-100 placeholder-neutral-600 focus:outline-none transition-all">
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-neutral-400 text-sm font-medium mb-2">Preferred Contact Method</label>
+                    <select class="w-full px-4 py-3 bg-neutral-800/50 border border-neutral-700 rounded-xl text-neutral-100 focus:outline-none transition-all">
+                        <option value="" disabled selected class="text-neutral-600">Choose one...</option>
                         <option value="email">Email</option>
                         <option value="phone">Phone Call</option>
                         <option value="text">Text Message</option>
                     </select>
                 </div>
-                <div class="mb-4">
-                    <textarea 
-                        placeholder="Tell us about your event (date, number of guests, type of event, etc.)" 
-                        class="w-full px-4 py-2 rounded-lg bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500" 
-                        rows="4"></textarea>
+                <div class="mb-8">
+                    <label class="block text-neutral-400 text-sm font-medium mb-2">Tell Us About Your Event</label>
+                    <textarea placeholder="Date, number of guests, type of event, etc."
+                              class="w-full px-4 py-3 bg-neutral-800/50 border border-neutral-700 rounded-xl text-neutral-100 placeholder-neutral-600 focus:outline-none transition-all resize-none"
+                              rows="4"></textarea>
                 </div>
-                <button type="submit" 
-                        class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300">
+                <button type="submit"
+                        class="w-full py-3.5 bg-tavern-500 hover:bg-tavern-400 text-neutral-950 font-bold rounded-xl transition-all hover:shadow-lg hover:shadow-tavern-500/25 hover:-translate-y-0.5 text-lg">
                     Send Message
                 </button>
             </form>
         </div>
     </section>
 
-    <footer class="bg-gray-700 text-gray-100 py-12">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-wrap -mx-6">
-                <!-- Map Section -->
-                <div class="w-full md:w-3/5 mb-8 md:mb-0 px-6">
-                    <h4 class="text-xl font-bold mb-4">Our Location</h4>
-                    <div class="w-full" style="height: 400px;">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6746.66034390628!2d-75.91685182364967!3d42.08990425212616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89daef69d5794e5d%3A0x5ae766986b05bede!2sThirsty&#39;s%20Tavern!5e1!3m2!1sen!2sus!4v1727970960751!5m2!1sen!2sus" 
-                            class="w-full h-full rounded-lg"
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-12 gap-12">
+                <!-- Map -->
+                <div class="md:col-span-6 reveal">
+                    <h4 class="font-heading text-xl font-bold text-white mb-4">Find Us</h4>
+                    <div class="rounded-2xl overflow-hidden" style="height: 350px;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6746.66034390628!2d-75.91685182364967!3d42.08990425212616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89daef69d5794e5d%3A0x5ae766986b05bede!2sThirsty&#39;s%20Tavern!5e1!3m2!1sen!2sus!4v1727970960751!5m2!1sen!2sus"
+                            class="w-full h-full"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
                 </div>
 
-                <!-- Hours Section -->
-                <div class="w-full md:w-1/5 mb-8 md:mb-0 px-6">
-                    <h4 class="text-xl font-bold mb-4">Hours of Operation</h4>
-                    <ul class="space-y-2">
-                        <li>Monday - Friday: 11:00 AM - 2:00 AM</li>
-                        <li>Saturday: 10:00 AM - 2:00 AM</li>
-                        <li>Sunday: 10:00 AM - 1:00 AM</li>
+                <!-- Hours -->
+                <div class="md:col-span-3 reveal reveal-delay-1">
+                    <h4 class="font-heading text-xl font-bold text-white mb-4">Hours</h4>
+                    <ul class="space-y-3 text-neutral-400">
+                        <li class="flex justify-between"><span>Mon - Fri</span><span class="text-neutral-200">11am - 2am</span></li>
+                        <li class="flex justify-between"><span>Saturday</span><span class="text-neutral-200">10am - 2am</span></li>
+                        <li class="flex justify-between"><span>Sunday</span><span class="text-neutral-200">10am - 1am</span></li>
                     </ul>
-                </div>
-
-                <!-- Contact Section -->
-                <div class="w-full md:w-1/5 px-6">
-                    <h4 class="text-xl font-bold mb-4">Contact Information</h4>
-                    <ul class="space-y-2">
-                        <li>46 S Washington St, <br> Binghamton NY 13901</li>
-                        <li><a href="tel://(607) 722-6982" class="text-blue-300 hover:text-blue-200">(607) 722-6982</a></li>
-                        <li><a href="mailto:thirstys@stny.rr.com" class="text-blue-300 hover:text-blue-200">thirstys@stny.rr.com</a></li>
-                    </ul>
-                    <div class="mt-4">
-                        <a href="https://www.facebook.com/profile.php?id=100052099273035" 
-                           class="text-blue-300 hover:text-blue-200"
-                           target="_blank"
-                           rel="noopener noreferrer">
-                            <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                            </svg>
+                    <div class="mt-8">
+                        <h4 class="font-heading text-xl font-bold text-white mb-4">Follow Us</h4>
+                        <a href="https://www.facebook.com/profile.php?id=100052099273035"
+                           class="inline-flex items-center gap-2 text-neutral-400 hover:text-tavern-400 transition-colors"
+                           target="_blank" rel="noopener noreferrer">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+                            <span class="text-sm font-medium">Facebook</span>
                         </a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Copyright -->
-            <div class="border-t border-gray-600 pt-8 text-center">
-                <p class="text-sm text-gray-400">
-                    &copy; 2024 Thirsty's Tavern. All Rights Reserved.
-                </p>
+                <!-- Contact -->
+                <div class="md:col-span-3 reveal reveal-delay-2">
+                    <h4 class="font-heading text-xl font-bold text-white mb-4">Contact</h4>
+                    <ul class="space-y-3 text-neutral-400">
+                        <li>
+                            <span class="block text-neutral-200 font-medium">Address</span>
+                            46 S Washington St, Binghamton NY 13901
+                        </li>
+                        <li>
+                            <span class="block text-neutral-200 font-medium">Phone</span>
+                            <a href="tel:+16077226982" class="hover:text-tavern-400 transition-colors">(607) 722-6982</a>
+                        </li>
+                        <li>
+                            <span class="block text-neutral-200 font-medium">Email</span>
+                            <a href="mailto:thirstys@stny.rr.com" class="hover:text-tavern-400 transition-colors">thirstys@stny.rr.com</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </div>
+        <div class="border-t border-neutral-800 py-6">
+            <p class="text-center text-neutral-600 text-sm">&copy; 2025 Thirsty's Tavern. All Rights Reserved.</p>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
-    <script>
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const header = document.querySelector('header div:last-child');
-            header.style.transform = `translateY(${scrolled * 0.5}px)`;
-        });
-
-        const images = document.querySelectorAll('#gallery .group');
-        let currentIndex = 0;
-
-        function highlightImage() {
-            images.forEach((img, index) => {
-                img.classList.remove('scale-110');
-                if (index === currentIndex) {
-                    img.classList.add('scale-110');
-                }
-            });
-            currentIndex = (currentIndex + 1) % images.length;
-        }
-
-        setInterval(highlightImage, 3000); // Change image every 3 seconds
-    </script>
-    <!-- Add Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        var swiper = new Swiper(".mySwiper", {
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('nav-scrolled', window.scrollY > 50);
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Subtle hero parallax
+        const heroImg = document.getElementById('hero-img');
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            if (scrolled < window.innerHeight) {
+                heroImg.style.transform = `scale(1.05) translateY(${scrolled * 0.15}px)`;
+            }
+        });
+
+        // Scroll reveal animations
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        revealElements.forEach(el => observer.observe(el));
+
+        // Swiper
+        new Swiper('.mySwiper', {
             slidesPerView: 1,
-            spaceBetween: 30,
+            spaceBetween: 20,
             loop: true,
             centeredSlides: true,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
+            autoplay: { delay: 3500, disableOnInteraction: false },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
             breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                },
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
             },
         });
-    </script>
-    <script>
+
+        // Fancybox
         Fancybox.bind("[data-fancybox='menu']", {
-            Thumbs: {
-                autoStart: true,
-            },
+            Thumbs: { autoStart: true },
             Toolbar: {
                 display: {
-                    left: ["infobar"],
-                    middle: [
-                        "zoomIn",
-                        "zoomOut",
-                        "toggle1to1",
-                        "rotateCCW",
-                        "rotateCW",
-                        "flipX",
-                        "flipY",
-                    ],
-                    right: ["slideshow", "thumbs", "close"],
+                    left: ['infobar'],
+                    middle: ['zoomIn', 'zoomOut', 'toggle1to1', 'rotateCCW', 'rotateCW', 'flipX', 'flipY'],
+                    right: ['slideshow', 'thumbs', 'close'],
                 },
             },
         });
